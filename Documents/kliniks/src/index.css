@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* shadcn base variables */
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 199 89% 48%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 168 76% 30%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 186 100% 96%;
+    --accent-foreground: 168 76% 30%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 199 89% 48%;
+    --radius: 0.625rem;
+
+    /* Custom Clinics Design System */
+    --clinics-primary: #0EA5E9;
+    --clinics-primary-dark: #0284C7;
+    --clinics-secondary: #0D9488;
+    --clinics-success: #10B981;
+    --clinics-warning: #F59E0B;
+    --clinics-bg: #F8FAFC;
+    --clinics-surface: #FFFFFF;
+    --clinics-text: #0F172A;
+    --clinics-text-secondary: #475569;
+    --clinics-text-muted: #94A3B8;
+    --clinics-border: #E2E8F0;
+    --clinics-border-light: #F1F5F9;
+    --clinics-gradient-hero: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 50%, #CCFBF1 100%);
+    --clinics-gradient-accent: linear-gradient(135deg, #0EA5E9 0%, #0D9488 100%);
+    --clinics-gold: #FBBF24;
+    --clinics-accent-light: #ECFEFF;
+    --clinics-red: #EF4444;
+    --clinics-shadow-search: 0 4px 20px rgba(14, 165, 233, 0.15), 0 2px 8px rgba(14, 165, 233, 0.08);
+    --clinics-shadow-card: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+    --clinics-shadow-card-hover: 0 10px 25px -5px rgba(15, 23, 42, 0.1), 0 4px 10px -5px rgba(15, 23, 42, 0.05);
+    --clinics-shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
+    --clinics-shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.07), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--clinics-text);
+    background-color: var(--clinics-surface);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: var(--clinics-gradient-hero);
+  }
+
+  .gradient-accent {
+    background: var(--clinics-gradient-accent);
+  }
+
+  .text-gradient {
+    background: var(--clinics-gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .shadow-search {
+    box-shadow: var(--clinics-shadow-search);
+  }
+
+  .shadow-card {
+    box-shadow: var(--clinics-shadow-card);
+  }
+
+  .shadow-card-hover {
+    box-shadow: var(--clinics-shadow-card-hover);
+  }
+
+  .bg-clinics-primary {
+    background-color: var(--clinics-primary);
+  }
+
+  .bg-clinics-bg {
+    background-color: var(--clinics-bg);
+  }
+
+  .bg-clinics-surface {
+    background-color: var(--clinics-surface);
+  }
+
+  .bg-clinics-accent-light {
+    background-color: var(--clinics-accent-light);
+  }
+
+  .bg-clinics-text {
+    background-color: var(--clinics-text);
+  }
+
+  .text-clinics-primary {
+    color: var(--clinics-primary);
+  }
+
+  .text-clinics-secondary {
+    color: var(--clinics-secondary);
+  }
+
+  .text-clinics-text {
+    color: var(--clinics-text);
+  }
+
+  .text-clinics-text-secondary {
+    color: var(--clinics-text-secondary);
+  }
+
+  .text-clinics-muted {
+    color: var(--clinics-text-muted);
+  }
+
+  .text-clinics-gold {
+    color: var(--clinics-gold);
+  }
+
+  .text-clinics-red {
+    color: var(--clinics-red);
+  }
+
+  .border-clinics {
+    border-color: var(--clinics-border);
+  }
+
+  .border-clinics-light {
+    border-color: var(--clinics-border-light);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--clinics-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--clinics-text-muted);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--clinics-text-secondary);
+}
+
+/* Smooth scroll - disabled to prevent scroll issues on refresh */
+html {
+  scroll-behavior: auto;
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
